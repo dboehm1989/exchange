@@ -39,7 +39,7 @@ export default {
 
     const createNewTask = () => {
       form.id = Date.now()
-      form.type = isTimePast() ? 'cancel' : 'ready'
+      form.type = isTimePast() ? 'cancelled' : 'active'
       store.commit('SAVE_STORE_TASK', form)
       store.commit('SET_STORAGE_TASKS')
       router.push('/')

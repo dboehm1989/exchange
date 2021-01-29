@@ -27,7 +27,7 @@ export default createStore({
   },
   getters: {
     activeTasks(state) {
-      return state.tasks.filter((task) => task.type === 'ready').length
+      return state.tasks.filter((task) => task.type === 'active').length
     },
   },
 })

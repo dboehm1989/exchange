@@ -12,16 +12,16 @@ export default {
     const statusClass = ref()
     const getStatus = computed(() => {
       switch (props.type) {
-        case 'ready':
+        case 'active':
           statusClass.value = 'primary'
           return 'Активен'
         case 'done':
           statusClass.value = 'primary'
           return 'Завершон'
-        case 'cancel':
+        case 'cancelled':
           statusClass.value = 'danger'
           return 'Отменён'
-        case 'progress':
+        case 'pending':
           statusClass.value = 'danger'
           return 'Выполняеться'
         default:
