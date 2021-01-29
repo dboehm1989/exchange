@@ -1,4 +1,5 @@
 <template>
+  {{ tasks }}
   <h1 v-if="!tasks.length" class="text-white center">Задач пока нет</h1>
   <template v-else>
     <h3 class="text-white">Всего активных задач: {{ activeTasks }}</h3>

@@ -10,15 +10,16 @@ export default createStore({
   },
   mutations: {
     SAVE_STORE_TASK(state, task) {
+      console.log(state)
       state.tasks.push(task)
     },
     GET_STORAGE_TASKS(state) {
-      const tasks = JSON.parse(localStorage.getItem('data'))
-      state.tasks = tasks
+      const tasks = JSON.parse(localStorage.getItem('task'))
+      state.tasks = tasks || []
     },
     SET_STORAGE_TASKS(state) {
       const tasks = computed(() => state.tasks)
-      localStorage.setItem('data', JSON.stringify(tasks.value))
+      localStorage.setItem('task', JSON.stringify(tasks.value))
     },
     SET_STATUS_TASK(state, payload) {
       const foundIndex = state.tasks.findIndex((x) => x.id == payload.id)
