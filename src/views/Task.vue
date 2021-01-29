@@ -27,6 +27,7 @@ export default {
     const editTaskStatus = (type) => {
       task.value.type = type
       store.commit('SET_STATUS_TASK', task)
+      store.commit('SET_STORAGE_TASKS')
     }
 
     function getTaskId() {
